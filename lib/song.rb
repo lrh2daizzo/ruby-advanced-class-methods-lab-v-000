@@ -10,4 +10,8 @@ class Song
   def save
     self.class.all << self
   end
+
+  def self.create
+    Song.new.tap
+  end
 end
