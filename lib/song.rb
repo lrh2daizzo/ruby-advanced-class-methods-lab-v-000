@@ -48,5 +48,16 @@ class Song
       song.artist_name = artist_name
     end
   end
-  
+
+  def self.new_from_filename(filename)
+    file_parts = filename.split(" - ")
+    song_name = file_parts[1].gsub(".mp3","")
+    artist_name = file_parts[0]
+
+    Song.new.tap do |song|
+      song.name = song_name
+      song.artist_name = artist_name
+      song.save
+    end
+  end
 end
