@@ -12,6 +12,6 @@ class Song
   end
 
   def self.create
-    Song.new.tap {|song|}
+    Song.new.tap {|song| song.save }
   end
 end
